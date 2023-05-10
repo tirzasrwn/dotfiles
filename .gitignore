@@ -3,3 +3,6 @@
 *.bak
 *.dump
 
+## Useless file:
+.module
+
