@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 
 # User change
 # Change wallpaper using feh
-exec feh --bg-scale --zoom fill /home/tirzasrwn/.config/i3/dracula-soft-waves-bd93f9.png
+exec feh --bg-scale --zoom fill $HOME/.config/i3/dracula-soft-waves-bd93f9.png
 
 # Enable rofi search
 bindsym $mod+d exec rofi -show drun
@@ -215,7 +215,7 @@ client.background       #F8F8F2
 
 # Launch polybar
 # exec_always: when config is reload, this command will execute
-exec_always /home/tirzasrwn/.config/polybar/launch.sh >/dev/null 2>&1 &
+exec_always $HOME/.config/polybar/launch.sh >/dev/null 2>&1 &
 
 # Move the current workspace to the next output
 # (effectively toggles when you only have two outputs)
