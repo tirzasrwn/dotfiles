@@ -6,5 +6,6 @@ if type -q exa
   alias la "ll -a"
   alias lt "ll --tree --level=2"
   alias psx "ps xf | less -S"
+  alias gl="git log --all --decorate --oneline --graph"
 end
 
