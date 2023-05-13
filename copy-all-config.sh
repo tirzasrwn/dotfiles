@@ -9,4 +9,5 @@ cp -frv $CONFIG_DIR/i3 ./
 cp -frv $CONFIG_DIR/kitty ./
 cp -frv $CONFIG_DIR/polybar ./
 cp -frv $CONFIG_DIR/rofi ./
+cp -frv $CONFIG_DIR/screenkey.json ./
 
