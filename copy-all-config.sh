@@ -10,4 +10,5 @@ cp -frv $CONFIG_DIR/kitty ./.config/
 cp -frv $CONFIG_DIR/polybar ./.config/
 cp -frv $CONFIG_DIR/rofi ./.config/
 cp -frv $CONFIG_DIR/screenkey.json ./.config/
+cp -frv $HOME/.Xresources ./
 
