@@ -16,3 +16,7 @@ if type -q git
   alias gd="git diff"
 end
 
+if type -q nvim
+  alias vim="nvim"
+end
+
