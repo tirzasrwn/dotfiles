@@ -12,7 +12,7 @@ end
 
 if type -q git
   alias gl="git log --all --decorate --oneline --graph"
-  alias gst="git status"
+  alias gg="git status"
   alias gd="git diff"
 end
 
