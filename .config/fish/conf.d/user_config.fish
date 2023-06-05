@@ -8,6 +8,9 @@ if type -q exa
   alias ll "exa -l -g --icons"
   alias la "ll -a"
   alias lt "ll --tree --level=2"
+  alias lls "ll | less -S"
+  alias lla "la | less -S"
+  alias llt "lt | less -S"
 end
 
 if type -q git
