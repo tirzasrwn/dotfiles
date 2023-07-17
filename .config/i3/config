@@ -207,10 +207,9 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 # Window padding, only work on >= 4.22
-for_window [class="^.*"] border pixel 5
 gaps inner 5
 gaps outer 0
-smart_gaps on
+smart_gaps inverse_outer
 smart_borders on
 
 # Launch polybar
