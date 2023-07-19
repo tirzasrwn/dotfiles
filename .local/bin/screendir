@@ -1,0 +1,6 @@
+#!/bin/bash
+
+date=$(date '+%d-%m-%Y')
+directory=$HOME/Pictures/$date
+mkdir -p $directory
+ls -lah $HOME/Pictures/ | grep $date

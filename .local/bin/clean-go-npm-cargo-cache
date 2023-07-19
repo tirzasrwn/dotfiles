@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "> go clean -modcache"
+go clean -modcache
+echo "> go clean -cache"
+go clean -cache
+echo "> npm cache clean --force"
+npm cache clean --force
+echo "> npm cache verify"
+npm cache verify
+echo "> cargo cache -a"
+cargo cache -a
