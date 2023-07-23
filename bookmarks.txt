@@ -1,0 +1,8 @@
+# bookmark.link sample file
+# rules:
+# - do not use empty line
+# - use lowercase for comment
+# bookmarks link
+https://www.yourlinkhere.com/ # your comment here
+# github
+xxx_githubtokenhere # github auth
