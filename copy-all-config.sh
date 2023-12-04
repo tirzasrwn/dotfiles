@@ -14,3 +14,4 @@ cp -frv $CONFIG_DIR/screenkey.json ./.config/
 cp -frv $HOME/.Xresources ./
 
 cp -frv $LOCAL_DIR/bin ./.local/
+cp -frv $HOME/cheatsheet ./

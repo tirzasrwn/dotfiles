@@ -1,0 +1,11 @@
+hcitool dev
+hcitool -i <dev> scan
+
+bluetoothctl
+
+-paired-devices
+-scan on
+-remove XX:XX:XX:XX:XX:XX, if it had already been paired
+-trust XX:XX:XX:XX:XX:XX
+-pair XX:XX:XX:XX:XX:XX
+-connect XX:XX:XX:XX:XX:XX
