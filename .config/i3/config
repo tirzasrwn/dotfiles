@@ -234,5 +234,5 @@ exec screenkey >/dev/null 2>&1 &
 # Enable touchpad tapping gesture with xinput
 exec xinput --set-prop "ELAN0708:00 04F3:30A0 Touchpad" "libinput Tapping Enabled" 1
 
-# Show, select, and paste bookmark.txt file
-bindsym $cmd+b exec xdotool type $(grep -v '^#' $HOME/.bookmark | rofi -dmenu -p 'bookmark' | cut -d ' ' -f1) >/dev/null 2>&1 &
+# Show, select, and paste .bookmark file
+bindsym $cmd+b exec xdotool type "$(grep -v '^#' $HOME/.bookmark | rofi -dmenu -p 'bookmark' | cut -d '#' -f1 | sed 's/[[:blank:]]*$//')" >/dev/null 2>&1 &
