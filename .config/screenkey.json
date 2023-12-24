@@ -8,7 +8,7 @@
     "persist": false,
     "window": null,
     "font_desc": "FiraCode Nerd Font weight=453 10",
-    "font_size": "small",
+    "font_size": "medium",
     "font_color": "#f8f8f2",
     "bg_color": "#282a36",
     "opacity": 1.0,
@@ -20,10 +20,10 @@
     "vis_shift": true,
     "vis_space": true,
     "geometry": [
-        1610,
-        1010,
-        300,
-        60
+        650,
+        5,
+        150,
+        24
     ],
     "screen": 0,
     "start_disabled": false,
