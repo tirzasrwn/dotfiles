@@ -20,7 +20,7 @@ i3wm is a tiling window manager designed for X11. It is known for its efficiency
 ## Depedencies
 
 - xdotool: copying bookmark
-- rofi: search for application
+- rofi: window switcher, application launcher and dmenu replacement
 - flameshot: take a screenshot
 - feh: change wallpapper
 - polybar: showing status bars
@@ -29,5 +29,5 @@ i3wm is a tiling window manager designed for X11. It is known for its efficiency
 
 - cmd + b: Open rofi bookmark
 - cmd + z: Screenshot now using flameshot
-- mod + d: Show rofi d-run
+- mod + d: Show rofi dmenu
 - cmd + l: lock the sceen using i3lock
