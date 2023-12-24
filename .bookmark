@@ -1,8 +1,11 @@
 # .bookmark sample file
 # rules:
-# - do not use empty line
+# - use '#' for commnet
 # - use lowercase for comment
 # bookmarks link
 https://www.yourlinkhere.com/ # your comment here
 # github
 xxx_githubtokenhere # github auth
+# xrandr
+xrandr --output eDP --off # disable main monitor
+xrandr --output eDP --auto --left-of HDMI-A-0 # enable main monitor, extend to left-of second monitor
