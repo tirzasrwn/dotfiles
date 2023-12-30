@@ -24,6 +24,8 @@ i3wm is a tiling window manager designed for X11. It is known for its efficiency
 - flameshot: take a screenshot
 - feh: change wallpapper
 - polybar: showing status bars
+- playerctl: control media playter
+- brightnessctl: control monitor brightness
 
 ## Custom Keybinding
 
