@@ -236,3 +236,14 @@ exec xinput --set-prop "ELAN0708:00 04F3:30A0 Touchpad" "libinput Tapping Enable
 
 # Show, select, and paste .bookmark file
 bindsym $cmd+b exec xdotool type "$(grep -v '^#' $HOME/.bookmark | rofi -dmenu -p 'bookmark' | cut -d '#' -f1 | sed 's/[[:blank:]]*$//')" >/dev/null 2>&1 &
+
+# Media player control
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Monitor brightness control
+bindsym XF86MonBrightnessUp exec brightnessctl s +13 && sleep .2 && brightnessctl
+bindsym XF86MonBrightnessDown exec brightnessctl s 13- && sleep .2 && brightnessctl
+
