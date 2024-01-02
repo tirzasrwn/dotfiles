@@ -3,6 +3,7 @@
 CONFIG_DIR="$HOME/.config"
 LOCAL_DIR="$HOME/.local"
 
+cp -frv $CONFIG_DIR/alacritty ./.config/
 cp -frv $CONFIG_DIR/dunst ./.config/
 cp -frv $CONFIG_DIR/fish/conf.d/readme.md ./.config/fish/conf.d/
 cp -frv $CONFIG_DIR/fish/conf.d/user_config.fish ./.config/fish/conf.d/
