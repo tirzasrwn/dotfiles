@@ -247,3 +247,9 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec brightnessctl s +13 && sleep .2 && brightnessctl
 bindsym XF86MonBrightnessDown exec brightnessctl s 13- && sleep .2 && brightnessctl
 
+# Lauch picom for compositor X11
+exec --no-startup-id picom -b
+
+# List, show, select, and open directory from .directory_list file using nautilus
+bindsym $cmd+o exec $HOME/.local/bin/open-directory >/dev/null 2>&1 &
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+selected_directory=$(eval find $(grep -v '^#' $HOME/.directory_list) -maxdepth 1 -mindepth 1 -type d | rofi -dmenu -p 'open')
+
+if [ -n "$selected_directory" ]; then
+    nautilus "$selected_directory" >/dev/null 2>&1 &
+else
+    echo "Canceled."
+fi
+
