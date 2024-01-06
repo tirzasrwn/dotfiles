@@ -23,3 +23,7 @@ if type -q nvim
   alias vim="nvim"
 end
 
+if type -q tmux-sessionizer
+  alias tt="tmux-sessionizer"
+end
+

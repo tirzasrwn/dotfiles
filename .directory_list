@@ -1,0 +1,9 @@
+# .directory_list sample file
+# rules:
+# - use by ~/.local/bin/open-directory and ~/.local/bin/tmux-sessionizer
+# - use # for comment
+# - use lowercase for comment
+~/
+~/dev/
+~/dev/github/
+~/Downloads/
