@@ -228,9 +228,6 @@ default_border pixel 5
 default_floating_border pixel 5
 for_window [class="^.*"] border pixel 5
 
-# Launch screenkey to display keyboard key
-exec screenkey >/dev/null 2>&1 &
-
 # Enable touchpad tapping gesture with xinput
 exec xinput --set-prop "ELAN0708:00 04F3:30A0 Touchpad" "libinput Tapping Enabled" 1
 
@@ -247,9 +244,12 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec brightnessctl s +13 && sleep .2 && brightnessctl
 bindsym XF86MonBrightnessDown exec brightnessctl s 13- && sleep .2 && brightnessctl
 
-# Lauch picom for compositor X11
+# Lauch picom for x11 compositor
 exec --no-startup-id picom -b
 
 # List, show, select, and open directory from .directory_list file using nautilus
 bindsym $cmd+o exec $HOME/.local/bin/open-directory >/dev/null 2>&1 &
+
+# Toggle screenkey
+bindsym $cmd+k exec $HOME/.local/bin/toggle-app screenkey >/dev/null 2>&1 &
 

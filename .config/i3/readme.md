@@ -29,8 +29,9 @@ i3wm is a tiling window manager designed for X11. It is known for its efficiency
 
 ## Custom Keybinding
 
+- mod + d: Show rofi dmenu
 - cmd + b: Open rofi bookmark
 - cmd + z: Screenshot now using flameshot
-- mod + d: Show rofi dmenu
-- cmd + l: lock the sceen using i3lock
-- cmd + o: search and open directory
+- cmd + l: Lock the sceen using i3lock
+- cmd + o: Search and open directory
+- cmd + k: Toggle screenkey app
