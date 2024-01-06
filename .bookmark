@@ -1,5 +1,6 @@
 # .bookmark sample file
 # rules:
+# - use by i3, see more in i3 config
 # - use '#' for commnet
 # - use lowercase for comment
 # bookmarks link
@@ -9,3 +10,4 @@ xxx_githubtokenhere # github auth
 # xrandr
 xrandr --output eDP --off # disable main monitor
 xrandr --output eDP --auto --left-of HDMI-A-0 # enable main monitor, extend to left-of second monitor
+xrandr --output HDMI-A-0 -auto --left-of eDP # enable second monitor, extend to right-of main monitor
