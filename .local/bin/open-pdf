@@ -1,0 +1,10 @@
+#!/bin/bash
+
+selected_file=$(eval find $(grep -v '^#' $HOME/.directory_list) -maxdepth 3 -type f -iname "*.pdf" | sort -u | rofi -dmenu -p 'pdf')
+
+if [ -n "$selected_file" ]; then
+    zathura "$selected_file" >/dev/null 2>&1 &
+else
+    echo "Canceled or no PDF files found."
+fi
+

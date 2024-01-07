@@ -253,3 +253,6 @@ bindsym $cmd+o exec $HOME/.local/bin/open-directory >/dev/null 2>&1 &
 # Toggle screenkey
 bindsym $cmd+k exec $HOME/.local/bin/toggle-app screenkey >/dev/null 2>&1 &
 
+# List, show, select, and open pdf from .directory_list file using zathura
+bindsym $cmd+p exec $HOME/.local/bin/open-pdf >/dev/null 2>&1 &
+
