@@ -18,3 +18,4 @@ I use default prefix that is C-b.
 
 - C-b f: Open ~/.local/bin/tmux-sessionizer script for fuzy finder project directory and open new tmux session on that directory.
 - C-b r: Reload ~/.config/tmux/tmux.conf file to apply.
+- C-b N: Open obsidian vault note directory with vim.
