@@ -36,3 +36,4 @@ i3wm is a tiling window manager designed for X11. It is known for its efficiency
 - cmd + o: Search and open directory using nautilus
 - cmd + k: Toggle screenkey app
 - cmd + p: Search and open pdf using zathura
+- cmd + shift + p: Toggle display mode between main only, second only, duplicate, and extended
