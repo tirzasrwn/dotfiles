@@ -20,7 +20,7 @@ done
 
 find_command+=(")")
 
-selected_file=$("${find_command[@]}" | sort -u | rofi -dmenu -p 'file')
+selected_file=$("${find_command[@]}" | sort -u | rofi -i -dmenu -p 'file')
 
 if [ -n "$selected_file" ]; then
     file_extension="${selected_file##*.}"
