@@ -221,7 +221,7 @@ exec_always $HOME/.config/polybar/launch.sh >/dev/null 2>&1 &
 bindsym $mod+x move workspace to output next
 
 # Screenshoot with flameshot
-bindsym $cmd+z exec flameshot gui
+bindsym $cmd+Shift+s exec flameshot gui
 
 # Change window border and hide title bar 
 default_border pixel 5
@@ -248,13 +248,13 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 13- && sleep .2 && brightness
 exec --no-startup-id picom -b
 
 # List, show, select, and open directory from .directory_list file using nautilus
-bindsym $cmd+o exec $HOME/.local/bin/open-directory >/dev/null 2>&1 &
+bindsym $cmd+g exec $HOME/.local/bin/open-directory >/dev/null 2>&1 &
 
 # Toggle screenkey
 bindsym $cmd+k exec $HOME/.local/bin/toggle-app screenkey >/dev/null 2>&1 &
 
-# List, show, select, and open pdf from .directory_list file using zathura
-bindsym $cmd+p exec $HOME/.local/bin/open-pdf >/dev/null 2>&1 &
+# List, show, select, and open document file from .directory_list file using xdg-open and zathura
+bindsym $cmd+f exec $HOME/.local/bin/open-file >/dev/null 2>&1 &
 
 # Toggle display mode
-bindsym $cmd+Shift+p exec $HOME/.local/bin/toggle-display-mode >/dev/null 2>&1 &
+bindsym $cmd+p exec $HOME/.local/bin/toggle-display-mode >/dev/null 2>&1 &

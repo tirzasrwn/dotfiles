@@ -1,0 +1,38 @@
+#!/bin/bash
+
+supported_extensions=("odt" "doc" "docx" "rtf" "ods" "xls" "xlsx" "csv" "odp" "ppt" "pptx")
+
+directories=$(grep -v '^#' $HOME/.directory_list)
+IFS=$'\n' read -rd '' -a directory_array <<<"$directories"
+
+find_command=("find")
+
+for dir in "${directory_array[@]}"; do
+    eval_dir=$(eval echo "$dir")
+    find_command+=("$eval_dir")
+done
+
+find_command+=("-maxdepth" "3" "-type" "f" "(" "-iname" "*.pdf")
+
+for ext in "${supported_extensions[@]}"; do
+    find_command+=("-o" "-iname" "*.$ext")
+done
+
+find_command+=(")")
+
+selected_file=$("${find_command[@]}" | sort -u | rofi -dmenu -p 'file')
+
+if [ -n "$selected_file" ]; then
+    file_extension="${selected_file##*.}"
+
+    if [[ " ${supported_extensions[*]} " =~ " ${file_extension} " ]]; then
+        xdg-open "$selected_file" >/dev/null 2>&1 &
+    elif [ "$file_extension" == "pdf" ]; then
+        zathura "$selected_file" >/dev/null 2>&1 &
+    else
+        echo "Unsupported file format: $file_extension"
+    fi
+else
+    echo "Canceled or no supported files found."
+fi
+
