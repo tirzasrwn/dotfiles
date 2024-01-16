@@ -258,3 +258,7 @@ bindsym $cmd+f exec $HOME/.local/bin/open-file >/dev/null 2>&1 &
 
 # Toggle display mode
 bindsym $cmd+p exec $HOME/.local/bin/toggle-display-mode >/dev/null 2>&1 &
+
+# Toggle screen record
+bindsym $cmd+Shift+r exec $HOME/.local/bin/toggle-screen-record >/dev/null 2>&1 &
+
