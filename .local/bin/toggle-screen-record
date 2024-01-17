@@ -17,7 +17,7 @@ then
     mpv "$output_directory/$latest_file" >/dev/null 2>&1 &
 else
     # If ffmpeg is not running, start the recording
-    ffmpeg -video_size 1920x1050 -framerate 30 -f x11grab -i "$primary_monitor"+0,30 -vf "scale=1280:700" -c:v libx264 "$output_file" >/dev/null 2>&1 &
+    ffmpeg -video_size 1920x1050 -framerate 30 -f x11grab -i "$primary_monitor"+0,30 -vf "scale=1280:700" -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt yuv420p "$output_file" >/dev/null 2>&1 &
     dunstify -a "Screen Recorder" -u normal "Recording started on display $current_display. Output file: $output_file"
 fi
 
