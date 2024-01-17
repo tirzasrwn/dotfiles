@@ -17,6 +17,7 @@ if type -q git
   alias gl="git log --all --decorate --oneline --graph"
   alias gg="git status"
   alias gd="git diff"
+  alias gds="git diff --staged"
 end
 
 if type -q nvim
@@ -25,5 +26,9 @@ end
 
 if type -q tmux-sessionizer
   alias tt="tmux-sessionizer"
+end
+
+if type -q tmux-windowizer
+  alias tw="tmux-windowizer"
 end
 

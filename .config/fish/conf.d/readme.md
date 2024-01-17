@@ -28,3 +28,6 @@ Install using followed links https://fishshell.com/. Please use latest version.
 - gl: "git log --all --decorate --oneline --graph"
 - gg: "git status"
 - gd: "git diff"
+- gds: "git diff --staged"
+- tt: "tmux-sessionizer"
+- tw: "tmux-windowizer"
