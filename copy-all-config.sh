@@ -16,6 +16,7 @@ cp -frv $CONFIG_DIR/screenkey.json ./.config/
 cp -frv $CONFIG_DIR/tmux ./.config/
 cp -frv $CONFIG_DIR/zathura ./.config/
 cp -frv $HOME/.Xresources ./
+cp -frv $HOME/.zshrc ./
 
 cp -frv $LOCAL_DIR/bin ./.local/
 cp -frv $HOME/cheatsheet ./
