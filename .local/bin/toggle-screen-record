@@ -6,18 +6,16 @@ output_file="$output_directory/$(date '+%Y%m%dT%H%M%S').mp4"
 # Get the current display from the DISPLAY environment variable
 current_display="$DISPLAY"
 
-if pgrep -x "ffmpeg" > /dev/null
-then
-    sleep 1
-    # If ffmpeg is running, stop the recording
-    pkill -x ffmpeg >/dev/null 2>&1 &
-    latest_file=$(ls -t "$output_directory" | grep '.mp4$' | head -n1)
-    dunstify -a "Screen Recorder" -u normal "Recording stopped. Output saved to: $output_directory/$latest_file"
-    sleep 1
-    mpv "$output_directory/$latest_file" >/dev/null 2>&1 &
+if pgrep -x "ffmpeg" >/dev/null; then
+	sleep 1
+	# If ffmpeg is running, stop the recording
+	pkill -x ffmpeg >/dev/null 2>&1 &
+	latest_file=$(ls -t "$output_directory" | grep '.mp4$' | head -n1)
+	dunstify -a "Screen Recorder" -u normal "Recording stopped. Output saved to: $output_directory/$latest_file"
+	sleep 1
+	mpv "$output_directory/$latest_file" >/dev/null 2>&1 &
 else
-    # If ffmpeg is not running, start the recording
-    ffmpeg -video_size 1920x1050 -framerate 30 -f x11grab -i "$primary_monitor"+0,30 -vf "scale=1280:700" -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt yuv420p "$output_file" >/dev/null 2>&1 &
-    dunstify -a "Screen Recorder" -u normal "Recording started on display $current_display. Output file: $output_file"
+	# If ffmpeg is not running, start the recording
+	ffmpeg -video_size 1920x1050 -framerate 30 -f x11grab -i "$primary_monitor"+0,30 -vf "scale=1280:700" -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt yuv420p "$output_file" >/dev/null 2>&1 &
+	dunstify -a "Screen Recorder" -u normal "Recording started on display $current_display. Output file: $output_file"
 fi
-

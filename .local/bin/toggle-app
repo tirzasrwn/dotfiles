@@ -1,17 +1,16 @@
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 <application_name>"
-    exit 1
+	echo "Usage: $0 <application_name>"
+	exit 1
 fi
 
 APP_NAME="$1"
 
-if pgrep -x "$APP_NAME" > /dev/null; then
-    pkill -x "$APP_NAME"
-    echo "Killed $APP_NAME"
+if pgrep -x "$APP_NAME" >/dev/null; then
+	pkill -x "$APP_NAME"
+	echo "Killed $APP_NAME"
 else
-    "$APP_NAME" >/dev/null 2>&1 &
-    echo "Started $APP_NAME"
+	"$APP_NAME" >/dev/null 2>&1 &
+	echo "Started $APP_NAME"
 fi
-

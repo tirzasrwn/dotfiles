@@ -9,46 +9,45 @@ hdmi_connected=$(xrandr --query | grep 'HDMI-A-0 connected' | wc -l)
 current_mode=$(cat "$MODE_FILE" 2>/dev/null) || current_mode="eDP"
 
 if [ "$hdmi_connected" -eq 1 ]; then
-    case "$current_mode" in
-        "eDP")
-            # Switch to HDMI only
-            xrandr --output eDP --off --output HDMI-A-0 --auto --primary
-            echo "HDMI" > "$MODE_FILE"
-            sleep 3
-            notify-send "Display Mode" "HDMI only" -t 3000
-            ~/.config/polybar/launch.sh >/dev/null 2>&1 &
-            ;;
-        "HDMI")
-            # Switch to duplicated mode
-            xrandr --output eDP --auto --output HDMI-A-0 --auto --same-as eDP --primary
-            echo "Duplicate" > "$MODE_FILE"
-            sleep 3
-            notify-send "Display Mode" "Duplicate" -t 3000
-            ~/.config/polybar/launch.sh >/dev/null 2>&1 &
-            ;;
-        "Duplicate")
-            # Switch to extended mode
-            xrandr --output eDP --auto --output HDMI-A-0 --auto --right-of eDP --primary
-            echo "Extend" > "$MODE_FILE"
-            sleep 3
-            notify-send "Display Mode" "Extended" -t 3000
-            ~/.config/polybar/launch.sh >/dev/null 2>&1 &
-            ;;
-        *)
-            # Default to eDP only
-            xrandr --output HDMI-A-0 --off --output eDP --auto --primary
-            echo "eDP" > "$MODE_FILE"
-            sleep 3
-            notify-send "Display Mode" "eDP only" -t 3000
-            ~/.config/polybar/launch.sh >/dev/null 2>&1 &
-            ;;
-    esac
+	case "$current_mode" in
+	"eDP")
+		# Switch to HDMI only
+		xrandr --output eDP --off --output HDMI-A-0 --auto --primary
+		echo "HDMI" >"$MODE_FILE"
+		sleep 3
+		notify-send "Display Mode" "HDMI only" -t 3000
+		~/.config/polybar/launch.sh >/dev/null 2>&1 &
+		;;
+	"HDMI")
+		# Switch to duplicated mode
+		xrandr --output eDP --auto --output HDMI-A-0 --auto --same-as eDP --primary
+		echo "Duplicate" >"$MODE_FILE"
+		sleep 3
+		notify-send "Display Mode" "Duplicate" -t 3000
+		~/.config/polybar/launch.sh >/dev/null 2>&1 &
+		;;
+	"Duplicate")
+		# Switch to extended mode
+		xrandr --output eDP --auto --output HDMI-A-0 --auto --right-of eDP --primary
+		echo "Extend" >"$MODE_FILE"
+		sleep 3
+		notify-send "Display Mode" "Extended" -t 3000
+		~/.config/polybar/launch.sh >/dev/null 2>&1 &
+		;;
+	*)
+		# Default to eDP only
+		xrandr --output HDMI-A-0 --off --output eDP --auto --primary
+		echo "eDP" >"$MODE_FILE"
+		sleep 3
+		notify-send "Display Mode" "eDP only" -t 3000
+		~/.config/polybar/launch.sh >/dev/null 2>&1 &
+		;;
+	esac
 else
-    # HDMI is not connected, switch to eDP only
-    xrandr --output HDMI-A-0 --off --output eDP --auto --primary
-    echo "eDP" > "$MODE_FILE"
-    sleep 3
-    notify-send "Display Mode" "eDP only" -t 3000
-    ~/.config/polybar/launch.sh >/dev/null 2>&1 &
+	# HDMI is not connected, switch to eDP only
+	xrandr --output HDMI-A-0 --off --output eDP --auto --primary
+	echo "eDP" >"$MODE_FILE"
+	sleep 3
+	notify-send "Display Mode" "eDP only" -t 3000
+	~/.config/polybar/launch.sh >/dev/null 2>&1 &
 fi
-

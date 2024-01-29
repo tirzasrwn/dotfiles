@@ -4,7 +4,7 @@ SCRIPT_PATH="/tmp/cht.sh"
 
 # Download cht.sh script if not exists
 if [ ! -f "$SCRIPT_PATH" ]; then
-  curl -sSL https://cht.sh/:cht.sh > "$SCRIPT_PATH"
+	curl -sSL https://cht.sh/:cht.sh >"$SCRIPT_PATH"
 fi
 
 read -p "enter query: " query
