@@ -15,6 +15,7 @@ cp -frv $CONFIG_DIR/rofi ./.config/
 cp -frv $CONFIG_DIR/screenkey.json ./.config/
 cp -frv $CONFIG_DIR/tmux ./.config/
 cp -frv $CONFIG_DIR/zathura ./.config/
+cp -frv $HOME/.p10k.zsh ./
 cp -frv $HOME/.Xresources ./
 cp -frv $HOME/.zshrc ./
 
