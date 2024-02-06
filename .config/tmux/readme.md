@@ -1,21 +1,24 @@
-# tmux
+# tmux Configuration
 
 ## About
 
-A terminal multiplexer. I use tmux because it is indeed pain switching terminal by only using i3wm.
+**tmux** is a terminal multiplexer, providing the ability to have multiple terminal sessions within a single window. It is particularly useful when managing multiple tasks or projects simultaneously.
 
-## Requirement
+## Requirements
 
-- fzf: command line fuzy finder.
-- tmux-sessionizer script: fuzy finder for create new tmux session in selected project directory.
-- xclip: copy into system clipboard.
+Ensure the following dependencies are installed:
+
+- **fzf**: Command-line fuzzy finder.
+- **tmux-sessionizer script**: Fuzzy finder to create a new tmux session in the selected project directory.
+- **xclip**: Copy into the system clipboard.
 
 ## Prefix
 
-I use default prefix that is C-b.
+I use the default prefix, which is `C-b`.
 
-## List Keybindings
+## List of Keybindings
 
-- C-b f: Open ~/.local/bin/tmux-sessionizer script for fuzy finder project directory and open new tmux session on that directory.
-- C-b r: Reload ~/.config/tmux/tmux.conf file to apply.
-- C-b N: Open obsidian vault note directory with vim.
+- `C-b f`: Open `~/.local/bin/tmux-sessionizer` script for fuzzy finding a project directory and open a new tmux session in that directory.
+- `C-b r`: Reload `~/.config/tmux/tmux.conf` file to apply changes.
+- `C-b N`: Open Obsidian vault note directory with Neovim.
+

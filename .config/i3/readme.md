@@ -1,41 +1,44 @@
-# i3
+# i3 Configuration
 
 ## About
 
-i3wm is a tiling window manager designed for X11. It is known for its efficiency, simplicity, and keyboard-centric approach.
+[i3wm](https://i3wm.org/) is a powerful tiling window manager designed for X11. Known for its efficiency, simplicity, and keyboard-centric approach, i3wm enhances productivity by organizing windows in a tiled layout.
 
-## Instalation
+## Installation
 
-[Debian and Ubuntu repositories](https://i3wm.org/docs/repositories.html)
+For Debian and Ubuntu users, i3wm can be easily installed through the [official repositories](https://i3wm.org/docs/repositories.html).
 
-## Docs
+## Documentation
 
-[user guide](https://i3wm.org/docs/userguide.html)
+Refer to the [user guide](https://i3wm.org/docs/userguide.html) for detailed instructions on configuring and using i3wm.
 
 ## Notes
 
-- mod = Mod1 = Alt key
-- cmd = Mod4 = Windows key
+- `mod` (Mod1) corresponds to the Alt key.
+- `cmd` (Mod4) corresponds to the Windows key.
 
-## Depedencies
+## Dependencies
 
-- xdotool: copying bookmark
-- rofi: window switcher, application launcher and dmenu replacement
-- flameshot: take a screenshot
-- feh: change wallpapper
-- polybar: showing status bars
-- playerctl: control media playter
-- brightnessctl: control monitor brightness
+Ensure the following dependencies are installed:
 
-## Custom Keybinding
+- **xdotool**: Copying bookmarks.
+- **rofi**: Window switcher, application launcher, and dmenu replacement.
+- **flameshot**: Capture screenshots.
+- **feh**: Change wallpaper.
+- **polybar**: Display status bars.
+- **playerctl**: Control media player.
+- **brightnessctl**: Control monitor brightness.
 
-- mod + d: Show rofi dmenu
-- cmd + b: Open rofi bookmark
-- cmd + shift + s: Screenshot now using flameshot
-- cmd + l: Lock the sceen using i3lock
-- cmd + g: Search and open directory using nautilus
-- cmd + k: Toggle screenkey app
-- cmd + f: Search and open file using xdg-open and zathura
-- cmd + p: Toggle display mode between main only, second only, duplicate, and extended
-- cmd + o: Toggle gama display via xrandr for safe eye
-- cmd + shift + r: Start recording using ffmpeg, stop it too using this keybinding
+## Custom Keybindings
+
+- `mod + d`: Show rofi dmenu.
+- `cmd + b`: Open rofi bookmark.
+- `cmd + shift + s`: Take a screenshot using flameshot.
+- `cmd + l`: Lock the screen using i3lock.
+- `cmd + g`: Search and open a directory using Nautilus.
+- `cmd + k`: Toggle screenkey app.
+- `cmd + f`: Search and open a file using xdg-open and zathura.
+- `cmd + p`: Toggle display modes (main only, second only, duplicate, extended).
+- `cmd + o`: Toggle gamma display via xrandr for eye safety.
+- `cmd + shift + r`: Start/stop recording using ffmpeg.
+
