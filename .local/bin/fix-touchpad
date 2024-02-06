@@ -1,0 +1,8 @@
+#!/bin/bash
+
+TOUCHPAD="ELAN0708:00 04F3:30A0 Touchpad"
+
+xinput
+xinput list-props $TOUCHPAD
+xinput disable $TOUCHPAD
+xinput enable $TOUCHPAD

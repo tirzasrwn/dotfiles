@@ -1,4 +1,4 @@
-/*Dracula theme based on the Purple official rofi theme*/
+/*Credit from Dracula theme based on the Purple official rofi theme modify as needed*/
 
 configuration {
     show-icons: true;
@@ -13,11 +13,11 @@ configuration {
 
 * {
     font: "FiraCode Nerd Font 10";
-    foreground: #f8f8f2;
-    background-color: #282a36;
-    active-background: #6272a4;
-    urgent-background: #ff5555;
-    urgent-foreground: #282a36;
+    foreground: #cad3f5;
+    background-color: #24273a;
+    active-background: #45475a;
+    urgent-background: #f38ba8;
+    urgent-foreground: #a6adc8;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
@@ -160,4 +160,3 @@ element-text, element-icon {
     background-color: inherit;
     text-color: inherit;
 }
-

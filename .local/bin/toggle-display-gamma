@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Set your custom gamma value
+custom_gamma="1:.77987699:.54642268"
+custom_brightness="0.8" # Adjust as needed (range: 0 to 1)
+
+# Function to get the connected displays
+get_connected_displays() {
+	xrandr --listmonitors | awk '{print $4}'
+}
+
+# Get the connected displays
+connected_displays=$(get_connected_displays)
+
+# Check if no displays are connected
+if [ -z "$connected_displays" ]; then
+	echo "No displays found."
+	exit 1
+fi
+
+current_gamma=$(xrandr --verbose | grep Gamma)
+echo $current_gamma
+
+# Iterate through connected displays and toggle gamma and brightness
+for display in $connected_displays; do
+	if [[ $current_gamma == *"1.0:1.0:1.0"* ]]; then
+		# If gamma is 1 1 1, toggle to custom gamma and brightness
+		xrandr --output "$display" --gamma $custom_gamma --brightness $custom_brightness
+		echo "Gamma and brightness toggled to $custom_gamma and $custom_brightness for $display"
+	else
+		# If gamma is not 1 1 1, toggle back to 1 1 1 and default brightness
+		xrandr --output "$display" --gamma 1:1:1 --brightness 1
+		echo "Gamma and brightness toggled back to 1 1 1 and default brightness for $display"
+	fi
+done

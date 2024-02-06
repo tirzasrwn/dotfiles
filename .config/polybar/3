@@ -27,7 +27,7 @@ enable-scroll = true
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
-format = %{F#c6a0f6}<bar> %{F#cad3f5}<label>
+format = %{F#%${color.base}}<bar> <label>
 
 ; Available tokens:
 ;   %percentage% (default)

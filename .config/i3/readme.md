@@ -37,3 +37,5 @@ i3wm is a tiling window manager designed for X11. It is known for its efficiency
 - cmd + k: Toggle screenkey app
 - cmd + f: Search and open file using xdg-open and zathura
 - cmd + p: Toggle display mode between main only, second only, duplicate, and extended
+- cmd + o: Toggle gama display via xrandr for safe eye
+- cmd + shift + r: Start recording using ffmpeg, stop it too using this keybinding
