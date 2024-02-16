@@ -3,7 +3,9 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
-	selected=$(eval find $(grep -v '^#' ~/.directory_list) -mindepth 1 -maxdepth 1 -type d | fzf --exact --bind=enter:replace-query+print-query)
+  currrent_session=$(tmux list-session | awk -F':' '{print $1}')
+	directory_list=$(eval find $(grep -v '^#' ~/.directory_list) -mindepth 1 -maxdepth 1 -type d)
+  selected=$(echo -e "$currrent_session\n$directory_list" | fzf --exact --bind=enter:replace-query+print-query --preview "exa --icons --tree --level=1 {}")
 fi
 
 if [[ -z $selected ]]; then
