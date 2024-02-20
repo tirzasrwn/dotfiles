@@ -37,6 +37,7 @@ antigen theme romkatv/powerlevel10k
 antigen bundle jeffreytse/zsh-vi-mode
 ZVM_VI_EDITOR="nvim"
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+ZVM_CURSOR_STYLE_ENABLED=false
 
 # Tell Antigen that you're done.
 antigen apply
