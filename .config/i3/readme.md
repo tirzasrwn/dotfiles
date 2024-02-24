@@ -35,7 +35,7 @@ Ensure the following dependencies are installed:
 - `cmd + b`: Open rofi bookmark.
 - `cmd + shift + s`: Take a screenshot using flameshot.
 - `cmd + l`: Lock the screen using i3lock.
-- `cmd + g`: Search and open a directory using Nautilus.
+- `cmd + d`: Search and open a directory using Nautilus.
 - `cmd + k`: Toggle screenkey app.
 - `cmd + f`: Search and open a file using xdg-open and zathura.
 - `cmd + p`: Toggle display modes (main only, second only, duplicate, extended).

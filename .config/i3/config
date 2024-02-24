@@ -275,7 +275,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 13- && sleep .2 && brightness
 exec --no-startup-id picom -b
 
 # List, show, select, and open directory from .directory_list file using nautilus
-bindsym $cmd+g exec $HOME/.local/bin/open-directory >/dev/null 2>&1 &
+bindsym $cmd+d exec $HOME/.local/bin/open-directory >/dev/null 2>&1 &
 
 # Toggle screenkey
 bindsym $cmd+k exec $HOME/.local/bin/toggle-app screenkey >/dev/null 2>&1 &
