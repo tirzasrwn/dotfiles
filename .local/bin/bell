@@ -1,0 +1,22 @@
+#!/bin/bash
+
+printf "bell is ringing ...\n"
+
+CURRENT_VOLUME=$(amixer -c 1 get Master | grep -oP "\[\d+%\]" | head -n 1 | tr -d "[]")
+
+function ctrl_c() {
+	printf "\nStopping the bell ...\n"
+	amixer -c 1 set Master $CURRENT_VOLUME >/dev/null 2>&1 &
+	exit 0
+}
+
+trap ctrl_c INT
+
+amixer -c 1 set Master 80% >/dev/null 2>&1 &
+
+while true; do
+	mpv --no-terminal ~/bell.mp3
+	sleep 1
+done
+
+exit 0
