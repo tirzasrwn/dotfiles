@@ -1,0 +1,21 @@
+#!/bin/bash
+
+THRESHOLD=30
+CHECK_INTERVAL=60 # Check every 5 minutes
+
+while true; do
+	# Get the battery percentage
+	BATTERY_LEVEL=$(acpi -b | grep -P -o '[0-9]+(?=%)')
+
+	# Get the charging status
+	IS_CHARGING=$(acpi -b | grep -c 'Charging')
+
+	# Notify if battery level is below the threshold and not charging
+	if [ "$BATTERY_LEVEL" -lt "$THRESHOLD" ] && [ "$IS_CHARGING" -eq 0 ]; then
+		notify-send -u critical "Battery Low" "Battery level is ${BATTERY_LEVEL}%. Please plug in your charger." >/dev/null 2>&1 &
+		$HOME/.local/bin/bell 1 >/dev/null 2>&1 &
+	fi
+
+	# Wait for the specified interval before checking again
+	sleep $CHECK_INTERVAL
+done

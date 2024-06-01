@@ -1,6 +1,19 @@
 #!/bin/bash
 
-printf "bell is ringing ...\n"
+# Check if a number is provided as an argument
+if [ -z "$1" ]; then
+	NUM_TIMES=0 # 0 will indicate an infinite loop
+else
+	NUM_TIMES=$1
+fi
+
+printf "bell is ringing"
+
+if [ $NUM_TIMES -eq 0 ]; then
+	printf " indefinitely...\n"
+else
+	printf " $NUM_TIMES times...\n"
+fi
 
 CURRENT_VOLUME=$(amixer -c 1 get Master | grep -oP "\[\d+%\]" | head -n 1 | tr -d "[]")
 
@@ -14,9 +27,21 @@ trap ctrl_c INT
 
 amixer -c 1 set Master 80% >/dev/null 2>&1 &
 
-while true; do
-	mpv --no-terminal ~/bell.mp3
-	sleep 1
-done
+if [ $NUM_TIMES -eq 0 ]; then
+	# Loop indefinitely
+	while true; do
+		mpv --no-terminal ~/bell.mp3
+		sleep 1
+	done
+else
+	# Loop for the specified number of times
+	for ((i = 1; i <= NUM_TIMES; i++)); do
+		mpv --no-terminal ~/bell.mp3
+		sleep 1
+	done
+fi
+
+# Restore the original volume after finishing
+amixer -c 1 set Master $CURRENT_VOLUME >/dev/null 2>&1 &
 
 exit 0

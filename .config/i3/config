@@ -294,3 +294,6 @@ bindsym $cmd+Shift+r exec $HOME/.local/bin/toggle-screen-record >/dev/null 2>&1 
 
 # Enable Sticky floating windows for picture in picture browser
 for_window [title="Picture-in-Picture"] sticky enable
+
+# Low battery notification
+exec $HOME/.local/bin/battery-notification
