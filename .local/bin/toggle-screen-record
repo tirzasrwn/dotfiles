@@ -6,6 +6,11 @@ output_file="$output_directory/$(date '+%Y%m%dT%H%M%S').mp4"
 # Get the current display from the DISPLAY environment variable
 current_display="$DISPLAY"
 
+# Define the audio input source (change this to match your system)
+# pactl list sources short
+# Use "default" for the default PulseAudio source or specify a specific monitor source
+audio_input="alsa_output.pci-0000_04_00.6.analog-stereo.monitor"
+
 if pgrep -x "ffmpeg" >/dev/null; then
 	sleep 1
 	# If ffmpeg is running, stop the recording
@@ -16,6 +21,8 @@ if pgrep -x "ffmpeg" >/dev/null; then
 	mpv "$output_directory/$latest_file" >/dev/null 2>&1 &
 else
 	# If ffmpeg is not running, start the recording
-	ffmpeg -video_size 1920x1050 -framerate 30 -f x11grab -i "$primary_monitor"+0,30 -vf "scale=1280:700" -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt yuv420p "$output_file" >/dev/null 2>&1 &
+	# ffmpeg -video_size 1920x1050 -framerate 30 -f x11grab -i "$primary_monitor"+0,30 -vf "scale=1280:700" -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt yuv420p "$output_file" >/dev/null 2>&1 &
+	# Change to this command if you need audio system
+	ffmpeg -video_size 1920x1050 -framerate 20 -f x11grab -i "$primary_monitor"+0,30 -f pulse -i "$audio_input" -vf "scale=1280:700" -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt yuv420p -c:a aac -b:a 128k "$output_file" >/dev/null 2>&1 &
 	dunstify -a "Screen Recorder" -u normal "Recording started on display $current_display. Output file: $output_file"
 fi
