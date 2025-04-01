@@ -261,6 +261,9 @@ exec xinput --set-prop "ELAN0708:00 04F3:30A0 Touchpad" "libinput Tapping Enable
 # Show, select, and paste .bookmark file
 bindsym $cmd+b exec xdotool type "$(grep -v '^#' $HOME/.bookmark | rofi -dmenu -p 'bookmark' | cut -d '#' -f1 | sed 's/[[:blank:]]*$//')" >/dev/null 2>&1 &
 
+# Show, select, and paste commands from .zsh_history
+bindsym $cmd+h exec xdotool type "$(grep -v '^#' $HOME/.zsh_history | awk -F'\x3B' '{print $2}' | awk '!seen[$0]++' | tac | rofi -dmenu -p 'zsh history')" >/dev/null 2>&1 &
+
 # Media player control
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
