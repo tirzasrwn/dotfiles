@@ -5,7 +5,12 @@ if [[ $# -eq 1 ]]; then
 else
 	currrent_session=$(tmux list-session | awk -F':' '{print $1}')
 	directory_list=$(eval find $(grep -v '^#' ~/.directory_list) -mindepth 0 -maxdepth 1 -type d)
-	selected=$(echo -e "$currrent_session$directory_list" | fzf --exact --bind=enter:replace-query+print-query --prompt="tmux-sessionizer: " --preview "exa --icons --tree --level=1 {} 2>&- || tmux list-windows -t {}")
+	if [ -n "$currrent_session" ]; then
+		input="$currrent_session"$'\n'"$directory_list"
+	else
+		input="$directory_list"
+	fi
+	selected=$(printf "%s" "$input" | fzf --exact --bind=enter:replace-query+print-query --prompt="tmux-sessionizer: " --preview "exa --icons --tree --level=1 {} 2>&- || tmux list-windows -t {}")
 fi
 
 if [[ -z $selected ]]; then
