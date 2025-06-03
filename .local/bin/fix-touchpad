@@ -3,9 +3,17 @@
 set -x
 set -eo pipefail
 
-TOUCHPAD="ELAN0708:00 04F3:30A0 Touchpad"
+TOUCHPAD="SynPS/2 Synaptics TouchPad"
 
 xinput
 xinput list-props "$TOUCHPAD"
 xinput disable "$TOUCHPAD"
 xinput enable "$TOUCHPAD"
+
+xinput set-prop "$TOUCHPAD" "libinput Tapping Enabled" 1
+xinput set-prop "$TOUCHPAD" "libinput Tapping Drag Enabled" 1
+xinput set-prop "$TOUCHPAD" "libinput Tapping Drag Lock Enabled" 1
+xinput set-prop "$TOUCHPAD" "libinput Accel Speed" 0.5
+xinput set-prop "$TOUCHPAD" "libinput Scrolling Pixel Distance" 10
+xinput set-prop "$TOUCHPAD" "libinput Natural Scrolling Enabled" 0
+xinput set-prop "$TOUCHPAD" "libinput Middle Emulation Enabled" 1
